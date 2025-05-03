@@ -66,12 +66,12 @@ public class LibroController {
         return libro_service.getLibrosPorAutor(autor);
     }
 
-    @GetMapping("/mas_antiguo")
+    @GetMapping("/mas-antiguo")
     public Libro obtenerLibroMasAntiguo() {
         return libro_service.getLibroMasAntiguo();
     }
 
-    @GetMapping("/mas_nuevo")
+    @GetMapping("/mas-nuevo")
     public Libro obtenerLibroMasNuevo() {
         return libro_service.getLibroMasNuevo();
     }
