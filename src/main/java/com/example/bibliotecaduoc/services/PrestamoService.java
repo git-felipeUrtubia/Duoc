@@ -21,9 +21,15 @@ public class PrestamoService {
         return prestamo_repository.buscarPrestamo(id);
     }
 
+    public Prestamo updatePrestamo(Prestamo prestamo) {
+        return prestamo_repository.actualizarPrestamo(prestamo);
+    }
+
     public void save(Prestamo prestamo) {
         prestamo_repository.guardarPrestamo(prestamo);
     }
 
-
+    public void deletePrestamo(int id) {
+        prestamo_repository.eliminarPrestamo(id);
+    }
 }

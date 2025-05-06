@@ -11,7 +11,7 @@ import java.util.List;
 @Repository
 public class LibroRepository {
 
-    private List<Libro> lista_libros = new ArrayList<>();
+    private List<Libro> lista_libros = new ArrayList();
 
 
     public LibroRepository() {

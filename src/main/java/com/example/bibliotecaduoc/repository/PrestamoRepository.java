@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public class PrestamoRepository {
 
-    List<Prestamo> lista_prestamos = new ArrayList<>();
+    List<Prestamo> lista_prestamos = new ArrayList();
 
     public List<Prestamo> obtenerPrestamos() {
         return lista_prestamos;
@@ -30,11 +30,29 @@ public class PrestamoRepository {
         return null;
     }
 
-//    public Prestamo editarPrestamo(Prestamo prestamo) {}
+    public Prestamo actualizarPrestamo(Prestamo prestamo) {
+        Prestamo nuevoPrestamo = new Prestamo();
+        for (Prestamo i : lista_prestamos) {
+            if (i.getId_prestamo() == prestamo.getId_prestamo()) {
 
-    public String eliminarPrestamo(Prestamo prestamo) {
-        lista_prestamos.remove(prestamo);
-        return "Prestamo eliminado exitosamente";
+                nuevoPrestamo.setId_prestamo(prestamo.getId_prestamo());
+                nuevoPrestamo.setRun_solicitante(prestamo.getRun_solicitante());
+                nuevoPrestamo.setLibro(prestamo.getLibro());
+                nuevoPrestamo.setFecha_solicitud(prestamo.getFecha_solicitud());
+                nuevoPrestamo.setFecha_entrega(prestamo.getFecha_entrega());
+                nuevoPrestamo.setCantidad_dias(prestamo.getCantidad_dias());
+                nuevoPrestamo.setMultas(prestamo.getMultas());
+            }
+        }
+        return nuevoPrestamo;
+    }
+
+    public void eliminarPrestamo(int id_prestamo) {
+        for (Prestamo i : lista_prestamos) {
+            if (i.getId_prestamo() == id_prestamo) {
+                lista_prestamos.remove(i);
+            }
+        }
     }
 
 }

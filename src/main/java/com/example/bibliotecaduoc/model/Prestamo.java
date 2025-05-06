@@ -12,6 +12,7 @@ public class Prestamo {
 
     int id_prestamo;
     String run_solicitante;
+    Libro libro;
     String fecha_solicitud;
     String fecha_entrega;
     int cantidad_dias;
